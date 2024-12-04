@@ -29,5 +29,9 @@ await kv.delete(["group"]) // type error cuz group is not in schema
 // and more
 ```
 
+Hint: 
+    If you want to use this on other runtime.
+    You should define `Deno.Kv`  on global scope.   
+
 ## License
 MIT

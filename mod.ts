@@ -1,3 +1,8 @@
+/**
+ * @module
+ * Typed Deno Kv by Evex
+ */
+
 type KvSchema = {
   key: Deno.KvKey;
   schema: unknown;
@@ -99,12 +104,3 @@ export class DenoKv<S extends KvSchema> extends Deno.Kv {
     return super.list(selector, options);
   }
 }
-
-const kv = new DenoKv<
-  [
-    { key: ["user", number]; schema: { id: string; name: string } },
-    { key: ["user", string]; schema: { id: number; name: string } }
-  ]
->();
-
-(await kv.get(["user", "123"])).value;

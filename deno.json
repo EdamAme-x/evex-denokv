@@ -1,4 +1,9 @@
 {
+  "name": "@evex/denokv",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./mod.ts"  
+  },
   "unstable": [
     "kv"
   ]

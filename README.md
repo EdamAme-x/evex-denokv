@@ -14,8 +14,10 @@ deno add jsr:@evex/denokv
 import { DenoKv } from "jsr:@evex/denokv";
 
 const kv = new DenoKv<
-    [{ key: ["users"], schema: { name: string }[] }],
-    [{ key: ["user", number], schema: { name: string } }]
+    [
+        { key: ["users"], schema: { name: string }[] },
+        { key: ["user", number], schema: { name: string } }
+    ]
 >();
 
 await kv.set(["user", 123], { name: "Evex" }); // typed
